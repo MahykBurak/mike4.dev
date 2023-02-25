@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+html {
+    scroll-behavior: smooth;
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+body {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+.mainAnimation {
+    animation: transitionIn 0.4s;
+}
+@keyframes transitionIn {
+    from {
+        opacity: 0;
+        scale: revert;
+        transform: translatey(+70px);
+    }
+    to {
+        opacity: 1;
+        scale: none;
+        transform: rotatey(0);
+    }
+}
+
+body {
+    @apply bg-white text-gray-600 antialiased
+        dark:bg-gray-900 dark:text-gray-200;
+}
+
+.header {
+    @apply mx-auto max-w-screen-md px-4 lg:px-0;
+}
+.mainContainer {
+    @apply mx-auto max-w-screen-md px-4 pb-2 lg:px-0;
+}
+.mainContainerLarge {
+    @apply mx-auto max-w-screen-2xl px-4;
+}
+.text-highlight {
+    @apply text-gray-900
+        dark:text-gray-50;
+}
