@@ -1,35 +1,8 @@
-import { getNowPlaying } from '@/lib/spotify';
+'use client';
 import clsx from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
-async function nowPlaying() {
-  const response = await getNowPlaying();
-  if (response.status === 204) {
-    return { isPlaying: false };
-  }
-  const data = await response.json();
-  const song = data.item;
-  const isPlaying = true;
-  const name = song.name;
-  const artistName = song.artists
-    .map((_artist: any) => _artist.name)
-    .join(', ');
-  const albumName = song.album.name;
-  const albumImage = song.album.images[2].url;
-  const songUrl = song.external_urls.spotify;
-  const songData = {
-    isPlaying,
-    name,
-    artistName,
-    albumName,
-    albumImage,
-    songUrl,
-  };
-  return songData;
-}
-export default async function SpotifyNowPlaying() {
-  const data = await nowPlaying();
-
+export default function SpotifyNowPlaying({ data }: { data: any }) {
   return (
     <div className="flex h-16 items-center space-x-2">
       {!data.isPlaying ? (
