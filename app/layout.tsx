@@ -17,9 +17,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="tr">
-      <body className={cx(inter.className, 'mainAnimation mainContainer')}>
+      <body className={cx(inter.className, 'mainContainer')}>
         <Header />
-        {children}
+        <div className="mainAnimation ">{children}</div>
       </body>
     </html>
   );
