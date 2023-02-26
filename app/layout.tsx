@@ -21,6 +21,7 @@ export default function RootLayout({
       <body className={cx(inter.className, 'mainContainer')}>
         <Header />
         <div className="mainAnimation ">{children}</div>
+        {/* @ts-expect-error Server Component */}
         <Footer />
       </body>
     </html>
