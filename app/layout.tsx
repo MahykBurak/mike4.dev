@@ -2,10 +2,13 @@ import './globals.css';
 import { Inter } from 'next/font/google';
 import { cx } from '@/lib/utils';
 import Header from '@/components/Header';
-export const metadata = {
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
   title: 'Burak Mike',
   description: 'Burak Mike personal website',
 };
+
 const inter = Inter({ subsets: ['latin'] });
 export default function RootLayout({
   children,
